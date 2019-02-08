@@ -1,8 +1,7 @@
 {
   "name": "vue-ribbon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue component for GitHub ribbons",
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/P3trur0/vue-ribbon.git"
@@ -21,7 +20,6 @@
     "url": "https://github.com/P3trur0/vue-ribbon/issues"
   },
   "homepage": "https://flatmap.it/vue-ribbon/",
-
   "main": "dist/ribbon.umd.js",
   "module": "dist/ribbon.esm.js",
   "unpkg": "dist/ribbon.min.js",
