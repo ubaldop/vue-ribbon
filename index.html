@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>Vue-Ribbon Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            background: #fefef5;
+            color: #676766;
+        }
+
+        header {
+            margin-top: 2.5em;
+            margin-bottom: 2.5em;
+        }
+
+        footer {
+            height: 1em;
+            margin-top: 2.5em;
+            margin-bottom: 2.5em;
+        }
+
+        #footer-text {
+            font-size: .75em;
+            font-weight: 400;
+        }
+    </style>
+    <meta HTTP-EQUIV="keywords" content="ribbon Ribbon GitHub github css CSS Vue vue component">
+    <meta name="description" content="Vue component demo for GitHub ribbons.">
+</head>
+
+<body>
+    <header>
+        <p align="center">
+            <img src="./assets/logo.png" alt="vue-ribbon" />
+            <br />
+            <a href="https://www.npmjs.com/package/vue-ribbon"><img src="https://img.shields.io/badge/npm-1.0.0-blue.svg"
+                    alt="Version"></a>
+            <a href="https://www.npmjs.com/package/vue-ribbon"><img src="https://img.shields.io/badge/license-MIT-green.svg"
+                    alt="License"></a>
+        </p>
+
+        <p align='center'><em>Did you develop a Vue application hosted on GitHub? Add this Vue component for embedding
+                a GitHub fork ribbon on it!</em></p>
+    </header>
+
+    <!-- VUE DEMO -->
+    <div id="app">
+        <div>
+            <Ribbon />
+        </div>
+        <div>
+            <Ribbon text='Vue rocks!' color='#51b982' position='left-top' />
+        </div>
+        <div>
+            <Ribbon position='right-bottom' url='https://github.com/P3trur0/vue-ribbon' color='#DA0011' text='Fork me from GitHub'
+                fixed />
+        </div>
+        <div>
+            <Ribbon text='Ribbons are cool!' position='left-bottom' color='#FAF200' fixed />
+        </div>
+    </div>
+    <!-- END OF DEMO -->
+
+    <p>It is Single File component implementing <a href="https://github.blog/2008-12-19-github-ribbons/">GitHub ribbons</a>
+        with Vue. It comes with a set of properties making the component customizable for your needs.</p>
+
+    <section id='installation'>
+        <h2>Installation</h2>
+        <p>You can install vue-ribbon using npm:</p>
+        <pre><code class="language-bash"><div>npm install --save vue-ribbon
+</div></code></pre>
+        <p>Alternatively, you can import <code>vue-ribbon</code> via <code>&lt;script&gt;</code> tag in the browser
+            directly,
+            avoiding the NPM installation:</p>
+        <pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/vue"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/vue-ribbon"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</div></code></pre>
+        <h2 id="usage">Usage</h2>
+        <p>Once installed, it is easy to use it.</p>
+        <p>First, you need to import <code>vue-ribbon</code> in your files. You can do that in different ways. For
+            example,
+            it can be imported into a build process for use in full-fledged Vue applications:</p>
+        <pre><code class="language-js"><div><span class="hljs-keyword">import</span> Ribbon <span class="hljs-keyword">from</span> <span class="hljs-string">'vue-ribbon'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">components</span>: {
+    Ribbon,
+  },
+  <span class="hljs-comment">// rest of the component</span>
+}
+</div></code></pre>
+        <p>Once imported, you can use your component as follows:</p>
+        <pre><code class="language-html"><div>      &lt;!-- Right Top Demo --/&gt;	
+      &lt;Ribbon/&gt;
+	  
+      &lt;!-- Left Top Demo --/&gt;	
+      &lt;Ribbon text='Vue rocks!' color='#51b982' position='left-top'/&gt;
+	
+      &lt;!-- Right Bottom Demo --/&gt;		
+      &lt;Ribbon 
+	text='Fork me from GitHub' 	
+	url='https://github.com/P3trur0/vue-ribbon'
+	position='right-bottom'	
+	color='#DA0011' 
+	fixed /&gt;
+		
+      &lt;!-- Left Bottom Demo --/&gt;			
+      &lt;Ribbon text='Ribbons are cool!' position='left-bottom' color='#FAF200' fixed /&gt;
+</div></code></pre>
+    </section>
+
+
+    <section id='properties'>
+        <h2>Properties</h2>
+        <p>If you need to customize the ribbon look and feel, you can use the following optional properties.</p>
+        <table align="center">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>text</td>
+                    <td>The text to display on the ribbon</td>
+                    <td><code>String</code></td>
+                    <td><em>vue-ribbon: check it out!</em></td>
+                </tr>
+                <tr>
+                    <td>url</td>
+                    <td>The URL linked</td>
+                    <td><code>String</code></td>
+                    <td><em><a href="https://flatmap.it/vue-ribbon">https://flatmap.it/vue-ribbon</a></em></td>
+                </tr>
+                <tr>
+                    <td>position</td>
+                    <td>The position of the ribbon. It can be <code>right-top</code>, <code>right-bottom</code>, <code>left-top</code>,
+                        <code>left-bottom</code></td>
+                    <td><code>String</code></td>
+                    <td><em>right-top</em></td>
+                </tr>
+                <tr>
+                    <td>color</td>
+                    <td>Defines the background color of the ribbon</td>
+                    <td><code>String</code></td>
+                    <td><em>#364a5e</em></td>
+                </tr>
+                <tr>
+                    <td>fixed</td>
+                    <td>If defined, it makes the ribbon fixed</td>
+                    <td><code>Boolean</code></td>
+                    <td><em>false</em></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The color of the text is automatically detected by the component: for background color with a luma greater
+            than
+            128 the text is white, otherwise black.
+            See how it looks on this <a href="https://flatmap.it/vue-ribbon">demo</a>!</p>
+    </section>
+    <br />
+    <footer>
+        <p id='footer-text' align='center'>Crafted with Love by <a href="https://gitub.com/P3trur0">P3trur0</a></p>
+    </footer>
+
+</body>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-ribbon"></script>
+<script>
+    new Vue({
+        el: '#app'
+    });
+</script>
+
+</html>
