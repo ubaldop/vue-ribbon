@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://github.com/P3trur0/vue-ribbon/blob/master/assets/logo.png?raw=true" alt="vue-ribbon"/>
   <br/>
-  <a href="https://www.npmjs.com/package/vue-ribbon"><img src="https://img.shields.io/badge/npm-1.0.0-blue.svg" alt="Version"></a>
+  <a href="https://www.npmjs.com/package/vue-ribbon"><img src="https://img.shields.io/badge/npm-1.0.1-blue.svg" alt="Version"></a>
   <a href="https://www.npmjs.com/package/vue-ribbon"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
 </p>
 
